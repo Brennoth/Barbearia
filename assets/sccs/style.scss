@@ -1,16 +1,16 @@
-$color-gold: #E6A11A; 
-$color-bg-dark: #0A0A0A; 
-$color-card-bg: rgba(22, 22, 22, 0.75); 
+$color-gold: #E6A11A;
+$color-bg-dark: #0A0A0A;
+$color-card-bg: rgba(22, 22, 22, 0.75);
 $color-text-white: #FFFFFF;
 $color-text-muted: #CCCCCC;
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
@@ -21,16 +21,14 @@ body {
     overflow-x: hidden;
 }
 
-// ==========================================
-// SEU HEADER ADAPTADO COM A LOGO NA ESQUERDA
-// ==========================================
+
 header {
     // Definimos a barra de fundo escura fixa no topo do Mobile igual ao Lumi
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 75px; 
+    height: 75px;
     background-color: #0A0A0A;
     z-index: 99;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -43,24 +41,24 @@ header {
         top: 0;
         left: 0;
         // Permite organizar a logo na esquerda e o botão na direita de forma limpa
-        display: block; 
+        display: block;
 
         // O SEU BOTÃO ORIGINAL (Ajustamos a margem e posição para grudar na direita)
         #menu-bar {
-            width: 45px;
-            height: 25px;
+            width: 4.5rem;
+            height: 2.5rem;
             cursor: pointer;
             position: absolute;
-            right: 20px;          // Fixa o seu botão no canto direito da tela
-            top: 25px;            // Centraliza verticalmente na barra superior
-            margin: 0;            // Zeramos a margem antiga para o alinhamento preciso
+            right: 2rem; // Fixa o seu botão no canto direito da tela
+            top: 2.5rem; // Centraliza verticalmente na barra superior
+            margin: 0; // Zeramos a margem antiga para o alinhamento preciso
         }
 
         // Seus estilos de barra intactos
         .bar {
-            height: 5px;
+            height: 0.5rem;
             width: 100%;
-            background-color: #DC052D;
+            background-color: #ffb433;
             display: block;
             border-radius: 5px;
             transition: 0.3s ease;
@@ -79,28 +77,32 @@ header {
             transition: 0.3s ease;
             display: none;
             position: absolute;
-            top: 75px; // Abre logo abaixo da barra superior fixa
+            top: 7.5rem; // Abre logo abaixo da barra superior fixa
             text-align: right;
             width: 100%;
         }
 
         .nav ul {
-            padding: 20px 22px;
+            padding: 2rem 2.2rem;
         }
 
         .nav li {
             list-style: none;
-            padding: 12px 0;
+            padding: 1.2rem 0;
         }
 
         .nav li a {
-            color: white;
-            font-size: 20px;
+            color: #1a1a1a;
+            font-size: 2em;
             text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out; 
         }
 
         .nav li a:hover {
-            font-weight: bold;
+            color: #ffffff;
+            display: inline-block;
+            transform: scale(1.1);
         }
 
         // Suas classes de modificação .change mantidas
@@ -130,40 +132,40 @@ header {
         z-index: 1;
         width: 0;
         height: 0;
-        position: fixed; 
-        top: 35px;   // Atualizado para expandir a partir do centro do seu novo menu-bar
+        position: fixed;
+        top: 3.5rem; // Atualizado para expandir a partir do centro do seu novo menu-bar
         left: calc(100% - 40px); // Expande a partir do canto superior direito
-        background: radial-gradient(circle, #DC052D, #DC052D);
+        background: radial-gradient(circle, #ffb433);
         border-radius: 50%;
         transition: 0.3s ease;
     }
 
     .change-bg {
-        width: 500px; // Aumentado para garantir cobertura total da tela vindo do canto
-        height: 500px;
-        transform: translate(-35%, -35%); 
+        width: 50rem; // Aumentado para garantir cobertura total da tela vindo do canto
+        height: 50rem;
+        transform: translate(-35%, -35%);
     }
 
     // ESTILO DA LOGO ADICIONADA À ESQUERDA DA BARRA (IGUAL AO DESIGN DA IMAGEM)
     .brand-logo {
         position: absolute;
-        left: 20px;
-        top: 22px;
+        left: 2rem;
+        top: 2.2rem;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 0.8rem;
 
         .logo-icon {
             background-color: $color-gold;
             color: $color-bg-dark;
-            padding: 3px 6px;
+            padding: 0.3rem 0.6rem;
             border-radius: 4px;
-            font-size: 1.4rem;
+            font-size: 1.4em;
             font-weight: bold;
         }
 
         .logo-text {
-            font-size: 1.6rem;
+            font-size: 1.6em;
             font-weight: 700;
             color: $color-gold; // Dourado combinando com o app Lumi da imagem
             letter-spacing: 0.5px;
@@ -171,129 +173,211 @@ header {
     }
 }
 
-// Estilo do corpo da página ajustado para a nova barra mobile fixada
-.hero {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), 
-                url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 110px 20px 40px 20px; // Adiciona margem inicial para o conteúdo começar abaixo da barra
-
-    .hero-content {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .hero-title {
-        font-size: 3.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        line-height: 1.1;
-        letter-spacing: 1px;
-
-        span {
-            font-size: 4.4rem;
-            display: block;
-            margin-top: 5px;
-        }
-    }
-
-    .hero-subtitle {
-        font-size: 1.4rem;
-        color: $color-text-muted;
-        margin: 20px auto;
-        line-height: 1.6;
-        max-width: 400px;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-
-        a {
-            display: block;
-            width: 100%;
-            max-width: 280px;
-            padding: 14px;
-            border-radius: 25px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary { background-color: $color-gold; color: $color-bg-dark; font-weight: 700; }
-        .btn-secondary { border: 2px solid $color-gold; color: $color-gold; }
-    }
-
-    .hero-cards {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+main{
+    // Estilo do corpo da página ajustado para a nova barra mobile fixada
+    .hero {
+        position: relative;
+        min-height: 100vh;
         width: 100%;
-
-        .card {
-            background: $color-card-bg;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 20px;
-            border-radius: 12px;
+        background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800') no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 11rem 2rem 4rem 2rem; // Adiciona margem inicial para o conteúdo começar abaixo da barra
+    
+        .hero-content {
+            max-width: 100%;
+            margin-bottom: 3rem;
+        }
+    
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.1;
+            letter-spacing: 1px;
+    
+            span {
+                font-size: 4.4rem;
+                display: block;
+                margin-top: 5px;
+            }
+        }
+    
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: $color-text-muted;
+            margin: 20px auto;
+            line-height: 1.6;
+            max-width: 40rem;
+        }
+    
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+    
+            a {
+                display: block;
+                width: 100%;
+                max-width: 28rem;
+                padding: 1.4rem;
+                border-radius: 2.5rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+    
+            .btn-primary {
+                background-color: $color-gold;
+                color: $color-bg-dark;
+                font-weight: 700;
+            }
+    
+            .btn-secondary {
+                border: 2px solid $color-gold;
+                color: $color-gold;
+            }
+        }
+    
+        .hero-cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
             width: 100%;
-            max-width: 320px;
-
-            .card-icon { font-size: 2.2rem; color: $color-gold; display: block; margin-bottom: 6px; }
-            h3 { font-size: 1.6rem; font-weight: 600; margin-bottom: 4px; }
-            p { font-size: 1.2rem; color: $color-text-muted; }
+    
+            .card {
+                background: $color-card-bg;
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.04);
+                padding: 2rem;
+                border-radius: 1.2rem;
+                width: 100%;
+                max-width: 32rem;
+    
+                .card-icon {
+                    font-size: 2.2rem;
+                    color: $color-gold;
+                    display: block;
+                    margin-bottom: 6px;
+                }
+    
+                h3 {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                }
+    
+                p {
+                    font-size: 1.2rem;
+                    color: $color-text-muted;
+                }
+            }
         }
     }
+
 }
 
-// =======================================================
-// INTERFACE ADAPTATIVA TABLET/DESKTOP VIA MEDIA QUERIES
-// =======================================================
+
+//tablet
 @media (min-width: 768px) {
     .hero {
         padding-top: 140px;
-        .hero-title { font-size: 4.5rem; span { font-size: 6rem; } }
-        .hero-buttons { flex-direction: row; justify-content: center; gap: 20px; a { width: auto; padding: 14px 32px; } }
-        .hero-cards { flex-direction: row; justify-content: center; gap: 20px; .card { width: 220px; } }
+
+        .hero-title {
+            font-size: 4.5rem;
+
+            span {
+                font-size: 6rem;
+            }
+        }
+
+        .hero-buttons {
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+
+            a {
+                width: auto;
+                padding: 14px 32px;
+            }
+        }
+
+        .hero-cards {
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+
+            .card {
+                width: 220px;
+            }
+        }
     }
 }
 
+//desktop
 @media (min-width: 1024px) {
     header {
-        height: 80px;
+        padding: 0 1rem;
+        height: 8rem;
 
         #menu {
-            max-width: 1200px;
+            max-width: 120rem;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            #menu-bar { display: none; } // Oculta o hambúrguer no desktop
+            #menu-bar {
+                display: none;
+            }
+
+            // Oculta o hambúrguer no desktop
 
             .nav {
                 display: block !important;
                 position: static;
                 width: auto;
 
-                ul { display: flex; flex-direction: row; gap: 35px; padding: 0; }
-                li { padding: 0; }
-                li a { font-size: 1.4rem; transition: color 0.3s; &:hover { color: $color-gold; } }
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 3.5rem;
+                    padding: 0;
+                }
+
+                li {
+                    padding: 0;
+                }
+
+                li a {
+                    font-size: 1.4rem;
+                    transition: color 0.3s;
+                    font-weight: bolder;
+
+                    &:hover {
+                        display: inline-block;
+                        color: $color-gold;
+                        transform: scale(1.1);
+                    }
+                }
             }
         }
-        .menu-bg { display: none !important; }
-        .brand-logo { top: 25px; }
+
+        .menu-bg {
+            display: none !important;
+        }
+
+        .brand-logo {
+            position: relative !important;
+            top: 0;
+            left: 0;
+        }
     }
 }
