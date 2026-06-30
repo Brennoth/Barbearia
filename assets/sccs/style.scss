@@ -4,6 +4,13 @@ $color-card-bg: rgba(22, 22, 22, 0.75);
 $color-text-white: #FFFFFF;
 $color-text-muted: #CCCCCC;
 
+
+$color-bg-premium: #141416; // Grafite escuro moderno substituindo o preto puro
+$color-card-border: rgba(255, 255, 255, 0.05);
+
+//n esquecer do problema do hover
+
+
 * {
     padding: 0;
     margin: 0;
@@ -96,7 +103,7 @@ header {
             font-size: 2em;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.2s ease-in-out; 
+            transition: all 0.2s ease-in-out;
         }
 
         .nav li a:hover {
@@ -173,7 +180,8 @@ header {
     }
 }
 
-main{
+main {
+
     // Estilo do corpo da página ajustado para a nova barra mobile fixada
     .hero {
         position: relative;
@@ -186,26 +194,26 @@ main{
         align-items: center;
         text-align: center;
         padding: 11rem 2rem 4rem 2rem; // Adiciona margem inicial para o conteúdo começar abaixo da barra
-    
+
         .hero-content {
             max-width: 100%;
             margin-bottom: 3rem;
         }
-    
+
         .hero-title {
             font-size: 3.2rem;
             font-weight: 700;
             text-transform: uppercase;
             line-height: 1.1;
             letter-spacing: 1px;
-    
+
             span {
                 font-size: 4.4rem;
                 display: block;
                 margin-top: 5px;
             }
         }
-    
+
         .hero-subtitle {
             font-size: 1.4rem;
             color: $color-text-muted;
@@ -213,13 +221,13 @@ main{
             line-height: 1.6;
             max-width: 40rem;
         }
-    
+
         .hero-buttons {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
-    
+
             a {
                 display: block;
                 width: 100%;
@@ -232,26 +240,32 @@ main{
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
             }
-    
+
             .btn-primary {
                 background-color: $color-gold;
                 color: $color-bg-dark;
-                font-weight: 700;
+                font-weight: 700; 
+                &:hover{
+                    background-color: #ffffff;
+                }
             }
-    
+            .btn-primary:hover{
+                background-color: red;
+            }
+
             .btn-secondary {
                 border: 2px solid $color-gold;
                 color: $color-gold;
             }
         }
-    
+
         .hero-cards {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
             width: 100%;
-    
+
             .card {
                 background: $color-card-bg;
                 backdrop-filter: blur(8px);
@@ -260,20 +274,20 @@ main{
                 border-radius: 1.2rem;
                 width: 100%;
                 max-width: 32rem;
-    
+
                 .card-icon {
                     font-size: 2.2rem;
                     color: $color-gold;
                     display: block;
                     margin-bottom: 6px;
                 }
-    
+
                 h3 {
                     font-size: 1.6rem;
                     font-weight: 600;
                     margin-bottom: 4px;
                 }
-    
+
                 p {
                     font-size: 1.2rem;
                     color: $color-text-muted;
@@ -282,8 +296,134 @@ main{
         }
     }
 
-}
+    .services {
+        padding: 6rem 2rem;
+        background-color: $color-bg-premium;
 
+        &-container {
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+
+        &-header {
+            text-align: center;
+            margin-bottom: 4.5rem;
+
+            h2 {
+                font-size: 3.4rem;
+                color: $color-text-white;
+                margin-bottom: 1.4rem;
+                font-weight: 700;
+                letter-spacing: -0.05rem;
+
+                span {
+                    color: $color-gold;
+                }
+            }
+
+            p {
+                font-size: 1.5rem;
+                color: $color-text-muted;
+                max-width: 60rem;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+        }
+
+        &-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem;
+        }
+
+        .service-card {
+            width: 100%; // Mobile ocupa largura total por padrão
+            background-color: $color-card-bg;
+            border: 0.1rem solid $color-card-border;
+            border-radius: 1.6rem;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-0.5rem);
+                border-color: rgba($color-gold, 0.4);
+                box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.4);
+            }
+
+            .service-icon {
+                width: 5.4rem;
+                height: 5.4rem;
+                background-color: rgba($color-gold, 0.1);
+                border-radius: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 2.2rem;
+
+                svg {
+                    width: 2.6rem;
+                    height: 2.6rem;
+                    color: $color-gold;
+                }
+            }
+
+            .service-title {
+                font-size: 2.1rem;
+                color: $color-text-white;
+                margin-bottom: 1.2rem;
+                font-weight: 600;
+            }
+
+            .service-desc {
+                font-size: 1.45rem;
+                color: $color-text-muted;
+                line-height: 1.6;
+                margin-bottom: 2.4rem;
+                flex-grow: 1;
+            }
+
+            .service-footer {
+                display: flex;
+                align-items: center;
+                padding-top: 2rem;
+                margin-bottom: 2.2rem;
+                border-top: 0.1rem solid $color-card-border;
+            }
+
+            .service-price {
+                font-size: 2.6rem;
+                font-weight: 700;
+                color: $color-gold;
+            }
+
+            .service-btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 1.4rem;
+                background-color: transparent;
+                color: $color-gold;
+                border: 0.1rem solid $color-gold;
+                border-radius: 0.8rem;
+                font-size: 1.35rem;
+                font-weight: 600;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: $color-gold;
+                    color: #0A0A0A;
+                }
+            }
+        }
+    }
+
+
+}
 
 //tablet
 @media (min-width: 768px) {
@@ -317,6 +457,16 @@ main{
             .card {
                 width: 220px;
             }
+        }
+    }
+
+    .services {
+        .services-flex {
+            gap: 3rem;
+        }
+
+        .service-card {
+            flex: 1 1 calc((100% / 2) - 3.6rem) !important;
         }
     }
 }
@@ -360,6 +510,7 @@ main{
                     font-size: 1.4rem;
                     transition: color 0.3s;
                     font-weight: bolder;
+                    color: white;
 
                     &:hover {
                         display: inline-block;
@@ -378,6 +529,37 @@ main{
             position: relative !important;
             top: 0;
             left: 0;
+        }
+    }
+
+    main {
+        .hero {
+            .hero-buttons {
+                flex-direction: row;
+            }
+
+            .hero-buttons a {
+                font-size: 1.3rem;
+            }
+
+            .hero-cards {
+                flex-direction: row;
+            }
+        }
+
+        .services {
+            .services {
+                padding: 10rem 2rem;
+            }
+
+            .services-flex {
+                gap: 3.6rem !important;
+
+            }
+
+            .service-card {
+                flex: 1 1 calc((100% / 3) - 3.6rem) !important;
+            }
         }
     }
 }

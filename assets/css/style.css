@@ -196,6 +196,12 @@ main .hero .hero-buttons .btn-primary {
   color: #0A0A0A;
   font-weight: 700;
 }
+main .hero .hero-buttons .btn-primary:hover {
+  background-color: #ffffff;
+}
+main .hero .hero-buttons .btn-primary:hover {
+  background-color: red;
+}
 main .hero .hero-buttons .btn-secondary {
   border: 2px solid #E6A11A;
   color: #E6A11A;
@@ -231,6 +237,115 @@ main .hero .hero-cards .card p {
   font-size: 1.2rem;
   color: #CCCCCC;
 }
+main .services {
+  padding: 6rem 2rem;
+  background-color: #141416;
+}
+main .services-container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+main .services-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+main .services-header h2 {
+  font-size: 3.4rem;
+  color: #FFFFFF;
+  margin-bottom: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.05rem;
+}
+main .services-header h2 span {
+  color: #E6A11A;
+}
+main .services-header p {
+  font-size: 1.5rem;
+  color: #CCCCCC;
+  max-width: 60rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+main .services-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+main .services .service-card {
+  width: 100%;
+  background-color: rgba(22, 22, 22, 0.75);
+  border: 0.1rem solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.6rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+main .services .service-card:hover {
+  transform: translateY(-0.5rem);
+  border-color: rgba(230, 161, 26, 0.4);
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.4);
+}
+main .services .service-card .service-icon {
+  width: 5.4rem;
+  height: 5.4rem;
+  background-color: rgba(230, 161, 26, 0.1);
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+}
+main .services .service-card .service-icon svg {
+  width: 2.6rem;
+  height: 2.6rem;
+  color: #E6A11A;
+}
+main .services .service-card .service-title {
+  font-size: 2.1rem;
+  color: #FFFFFF;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+main .services .service-card .service-desc {
+  font-size: 1.45rem;
+  color: #CCCCCC;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+  flex-grow: 1;
+}
+main .services .service-card .service-footer {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  margin-bottom: 2.2rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.05);
+}
+main .services .service-card .service-price {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #E6A11A;
+}
+main .services .service-card .service-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1.4rem;
+  background-color: transparent;
+  color: #E6A11A;
+  border: 0.1rem solid #E6A11A;
+  border-radius: 0.8rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s ease;
+}
+main .services .service-card .service-btn:hover {
+  background-color: #E6A11A;
+  color: #0A0A0A;
+}
 
 @media (min-width: 768px) {
   .hero {
@@ -258,6 +373,12 @@ main .hero .hero-cards .card p {
   }
   .hero .hero-cards .card {
     width: 220px;
+  }
+  .services .services-flex {
+    gap: 3rem;
+  }
+  .services .service-card {
+    flex: 1 1 calc(50% - 3.6rem) !important;
   }
 }
 @media (min-width: 1024px) {
@@ -293,6 +414,7 @@ main .hero .hero-cards .card p {
     font-size: 1.4rem;
     transition: color 0.3s;
     font-weight: bolder;
+    color: white;
   }
   header #menu .nav li a:hover {
     display: inline-block;
@@ -306,5 +428,23 @@ main .hero .hero-cards .card p {
     position: relative !important;
     top: 0;
     left: 0;
+  }
+  main .hero .hero-buttons {
+    flex-direction: row;
+  }
+  main .hero .hero-buttons a {
+    font-size: 1.3rem;
+  }
+  main .hero .hero-cards {
+    flex-direction: row;
+  }
+  main .services .services {
+    padding: 10rem 2rem;
+  }
+  main .services .services-flex {
+    gap: 3.6rem !important;
+  }
+  main .services .service-card {
+    flex: 1 1 calc(33.3333333333% - 3.6rem) !important;
   }
 }/*# sourceMappingURL=style.css.map */
