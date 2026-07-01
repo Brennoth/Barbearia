@@ -212,9 +212,180 @@
             </div>
         </section>
 
+        <section class="about" id="sobre">
+
+            <!-- Container: limita a largura máxima do conteúdo e centraliza -->
+            <div class="about__container">
+
+                <!-- Coluna da esquerda: texto -->
+                <div class="about__content">
+                    <h2 class="about__title">
+                        Sobre a <span class="about__title-highlight">Elite Barbershop</span>
+                    </h2>
+
+                    <div class="about__text-group">
+                        <p class="about__text">
+                            Fundada em 2008, a Elite Barbershop nasceu da paixão por criar
+                            experiências únicas para o homem moderno. Nossa missão é combinar
+                            a tradição centenária da barbearia clássica com técnicas
+                            contemporâneas e produtos de alta qualidade.
+                        </p>
+                        <p class="about__text">
+                            Cada corte é uma obra de arte, cada cliente é tratado como
+                            realeza. Nossa equipe de barbeiros mestres possui anos de
+                            experiência e está sempre atualizada com as últimas tendências e
+                            técnicas do mercado.
+                        </p>
+                        <p class="about__text">
+                            Mais do que uma barbearia, somos um espaço onde homens se
+                            conectam, relaxam e saem renovados. Venha fazer parte da nossa
+                            família e descubra o que significa ter um visual verdadeiramente
+                            impecável.
+                        </p>
+                    </div>
+
+                    <!-- Uso <a> e não <button> porque leva para outra parte da
+           página (âncora). <button> é pra ações reais, tipo
+           submeter formulário ou abrir um modal -->
+                    <a href="#historia" class="about__cta">Conheça Nossa História</a>
+                </div>
+
+                <!-- Coluna da direita: imagem com os círculos decorativos -->
+                <div class="about__media">
+                    <div class="about__image-wrapper">
+                        <img class="about__image"
+                            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80"
+                            alt="Barbeiro finalizando o corte de cabelo de um cliente com atenção aos detalhes"
+                            loading="lazy" />
+                        <!-- elementos puramente decorativos: aria-hidden tira do leitor de tela -->
+                        <span class="about__decor about__decor--one" aria-hidden="true"></span>
+                        <span class="about__decor about__decor--two" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloco de estatísticas (fica fora do container principal
+       porque tem sua própria largura/grid) -->
+            <div class="about__stats">
+
+                <div class="about__stat-card">
+                    <div class="about__stat-icon">
+                        <!-- ícone "users" (pessoas), estilo lucide, feito em SVG puro -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <span class="about__stat-number">5000+</span>
+                    <span class="about__stat-label">Clientes Satisfeitos</span>
+                </div>
+
+                <div class="about__stat-card">
+                    <div class="about__stat-icon">
+                        <!-- ícone "clock" (relógio) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <span class="about__stat-number">15</span>
+                    <span class="about__stat-label">Anos de Experiência</span>
+                </div>
+
+                <div class="about__stat-card">
+                    <div class="about__stat-icon">
+                        <!-- ícone "award" (prêmio/medalha) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="6" />
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                        </svg>
+                    </div>
+                    <span class="about__stat-number">50+</span>
+                    <span class="about__stat-label">Prêmios Recebidos</span>
+                </div>
+
+                <div class="about__stat-card">
+                    <div class="about__stat-icon">
+                        <!-- ícone "heart" (coração) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                    </div>
+                    <span class="about__stat-number">98%</span>
+                    <span class="about__stat-label">Taxa de Satisfação</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="largura-definida galeria">
+
+
+
+            <div class="galeria-container">
+
+                <div class="galeria-header">
+                    <h2>Nossa <span>Galeria</span></h2>
+                    <p>Confira alguns dos nossos trabalhos e o ambiente acolhedor da nossa barbearia. Cada corte é uma
+                        obra de arte única.</p>
+                </div>
+
+                <div class="slider-wrapper">
+                    <img id="galeriaPrincipal" src="" alt="">
+
+                    <div class="slider-overlay">
+                        <h3 id="galeriaTitulo"></h3>
+                        <p id="galeriaDescricao"></p>
+                    </div>
+
+                    <button class="slider-nav-btn prev" id="galeriaPrev" aria-label="Anterior">&#8249;</button>
+                    <button class="slider-nav-btn next" id="galeriaNext" aria-label="Próximo">&#8250;</button>
+
+                    <div class="slider-dots" id="galeriaDots">
+                        <span class="galeria-dot ativo" data-index="0"></span>
+                        <span class="galeria-dot" data-index="1"></span>
+                        <span class="galeria-dot" data-index="2"></span>
+                        <span class="galeria-dot" data-index="3"></span>
+                        <span class="galeria-dot" data-index="4"></span>
+                        <span class="galeria-dot" data-index="5"></span>
+                    </div>
+                </div>
+
+                <div class="thumb-container" id="thumbContainer">
+                    <div class="thumb-item ativo" data-index="0">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumb-item" data-index="1">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumb-item" data-index="2">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumb-item" data-index="3">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumb-item" data-index="4">
+                        <img src="" alt="">
+                    </div>
+                    <div class="thumb-item" data-index="5">
+                        <img src="" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <script src="assets/js/hamburguerMneu.js"></script>
+    <script src="assets/js/galeria.js"></script>
 </body>
 
 </html>

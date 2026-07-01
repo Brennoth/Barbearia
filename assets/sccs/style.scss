@@ -4,12 +4,22 @@ $color-card-bg: rgba(22, 22, 22, 0.75);
 $color-text-white: #FFFFFF;
 $color-text-muted: #CCCCCC;
 
-
 $color-bg-premium: #141416; // Grafite escuro moderno substituindo o preto puro
 $color-card-border: rgba(255, 255, 255, 0.05);
 
-//n esquecer do problema do hover
+//about
+$color-bg: #0a0e1c; // fundo principal (azul quase preto)
+$color-bg-card: #131a2e; // fundo dos cards de estatística
+$color-border: rgba(255, 255, 255, .08); // linhas/bordas discretas
+$color-text-primary: #f5f6fa; // texto branco (títulos)
+$color-text-secondary: #a3abc2; // texto cinza-azulado (parágrafos)
+$color-accent: #f0a92b; // dourado principal
+$color-accent-dark: #d18f1e; // dourado mais escuro (hover/gradiente)
 
+$space-unit: 0.8rem;
+
+$container-max-width: 120rem;
+//about
 
 * {
     padding: 0;
@@ -28,6 +38,11 @@ body {
     overflow-x: hidden;
 }
 
+
+.largura-definida{
+    margin: 0 auto;
+    max-width: 120rem;
+}
 
 header {
     // Definimos a barra de fundo escura fixa no topo do Mobile igual ao Lumi
@@ -244,18 +259,23 @@ main {
             .btn-primary {
                 background-color: $color-gold;
                 color: $color-bg-dark;
-                font-weight: 700; 
-                &:hover{
-                    background-color: #ffffff;
+                font-weight: 700;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1)
                 }
             }
-            .btn-primary:hover{
-                background-color: red;
-            }
+
 
             .btn-secondary {
                 border: 2px solid $color-gold;
                 color: $color-gold;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1)
+                }
             }
         }
 
@@ -298,7 +318,7 @@ main {
 
     .services {
         padding: 6rem 2rem;
-        background-color: $color-bg-premium;
+        background: linear-gradient(to bottom, #0A0A0A, #121821);
 
         &-container {
             max-width: 120rem;
@@ -338,7 +358,7 @@ main {
 
         .service-card {
             width: 100%; // Mobile ocupa largura total por padrão
-            background-color: $color-card-bg;
+            background: #1C2533;
             border: 0.1rem solid $color-card-border;
             border-radius: 1.6rem;
             padding: 3rem;
@@ -355,7 +375,7 @@ main {
             .service-icon {
                 width: 5.4rem;
                 height: 5.4rem;
-                background-color: rgba($color-gold, 0.1);
+                background: #F2B914;
                 border-radius: 1.2rem;
                 display: flex;
                 align-items: center;
@@ -365,7 +385,7 @@ main {
                 svg {
                     width: 2.6rem;
                     height: 2.6rem;
-                    color: $color-gold;
+                    color: black;
                 }
             }
 
@@ -422,6 +442,195 @@ main {
         }
     }
 
+    .about {
+        @mixin container {
+            width: 100%;
+            max-width: $container-max-width;
+            margin-inline: auto; // centraliza horizontalmente
+            padding-inline: $space-unit * 3; // 24px de respiro nas laterais
+        }
+
+        @mixin button-reset {
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+
+        background-color: $color-bg;
+        color: $color-text-primary;
+        padding-block: $space-unit * 8;
+        overflow: hidden;
+
+        &__container {
+            @include container;
+            display: flex;
+            flex-direction: column; // mobile = tudo empilhado
+            gap: $space-unit * 5; // 40px entre texto e imagem
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: $space-unit * 3; // 24px entre título, parágrafos e botão
+        }
+
+        &__title {
+            font-weight: 700;
+            font-size: 3.4rem; // ~30px, tamanho confortável pra tela pequena
+            line-height: 1.25;
+            margin: 0;
+
+            // Essa classe SÓ existe dentro de .about__title,
+            // então faz sentido morar aninhada aqui dentro.
+            &-highlight {
+                color: $color-accent;
+            }
+        }
+
+        &__text-group {
+            display: flex;
+            flex-direction: column;
+            gap: $space-unit * 2; // 16px entre parágrafos
+        }
+
+        &__text {
+            margin: 0;
+            color: $color-text-secondary;
+            font-size: 1.4em;
+            line-height: 1.7; // linhas mais espaçadas = leitura mais confortável
+        }
+
+        &__cta {
+            @include button-reset;
+            align-self: flex-start; // não estica a largura toda no mobile
+            background: linear-gradient(135deg, $color-accent, $color-accent-dark);
+            color: #1a1200;
+            font-weight: 600;
+            font-size: 1.4em;
+            padding: $space-unit * 1.75 $space-unit * 3.5; // 14px x 28px
+            border-radius: 999px; // "pill", totalmente arredondado
+            transition: transform .2s ease, box-shadow .2s ease;
+
+            // Sempre estilizar :hover E :focus-visible juntos — quem navega
+            // pelo teclado (Tab) usa o focus, não o mouse. Esquecer isso é
+            // um erro comum de acessibilidade.
+            &:hover,
+            &:focus-visible {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px rgba($color-accent, .35);
+            }
+
+            &:focus-visible {
+                outline: 2px solid $color-text-primary;
+                outline-offset: 3px;
+            }
+        }
+
+        &__media {
+            width: 100%;
+        }
+
+        &__image-wrapper {
+            position: relative; // vira a "âncora" pros círculos decorativos
+            isolation: isolate; // garante que o z-index dos filhos não vaze pra fora
+        }
+
+        &__image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover; // corta a imagem mantendo proporção, sem deformar
+            border-radius: 20px;
+            display: block; // remove o espacinho fantasma que <img> cria por padrão
+            position: relative;
+            z-index: 1; // fica acima dos círculos decorativos
+        }
+
+        // Círculos decorativos atrás da imagem, em duas variações
+        // de posição/tamanho — por isso o modificador --one / --two do BEM.
+        &__decor {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0; // atrás da imagem
+            filter: blur(1px);
+
+            &--one {
+                width: 90px;
+                height: 90px;
+                background: $color-accent;
+                opacity: .35;
+                top: -20px;
+                right: -20px;
+                z-index: 2;
+            }
+
+            &--two {
+                width: 70px;
+                height: 70px;
+                background: $color-accent-dark;
+                opacity: .5;
+                bottom: -16px;
+                left: -16px;
+                z-index: 2;
+            }
+        }
+
+        &__stats {
+            @include container;
+            margin-top: $space-unit * 6; // 48px de distância do bloco de cima
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: $space-unit * 2;
+        }
+
+        &__stat-card {
+            background-color: $color-bg-card;
+            border: 1px solid $color-border;
+            border-radius: 16px;
+            padding: $space-unit * 3 $space-unit * 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: $space-unit;
+            transition: transform .25s ease, border-color .25s ease;
+            flex: 1 1 calc((100% / 2) - 1.6rem);
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba($color-accent, .4);
+            }
+        }
+
+        &__stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba($color-accent, .15);
+            color: $color-accent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: $space-unit;
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        &__stat-number {
+            font-weight: 700;
+            font-size: 2.4em;
+            color: $color-text-primary;
+        }
+
+        &__stat-label {
+            font-size: 1.4em;
+            color: $color-text-secondary;
+        }
+    }
+
 
 }
 
@@ -467,6 +676,38 @@ main {
 
         .service-card {
             flex: 1 1 calc((100% / 2) - 3.6rem) !important;
+        }
+    }
+
+
+    .about {
+        padding-block: $space-unit * 10;
+
+        &__title {
+            font-size: 3.4rem;
+        }
+
+        &__text {
+            font-size: 1.4rem;
+        }
+
+        &__image {
+            height: 420px;
+        }
+
+        // Estatísticas passam a ocupar as 4 colunas numa linha só
+        &__stats {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &__stat-number {
+            font-size: 1.9rem;
+        }
+    }
+
+    .galeria{
+        .thumb-item{
+            flex: 1 1 calc((100% / 3) - 1.6rem); 
         }
     }
 }
@@ -561,5 +802,269 @@ main {
                 flex: 1 1 calc((100% / 3) - 3.6rem) !important;
             }
         }
+
+
+        .about {
+
+            &__container {
+                flex-direction: row; // texto e imagem lado a lado
+                align-items: center;
+                gap: $space-unit * 8; // 64px entre as colunas
+            }
+
+            &__content {
+                flex: 1; // ocupa metade disponível
+            }
+
+            &__media {
+                flex: 1;
+            }
+
+            &__title {
+                font-size: 3.4rem;
+            }
+
+            &__image {
+                height: 480px;
+            }
+
+            &__decor {
+                &--one {
+                    width: 130px;
+                    height: 130px;
+                }
+
+                &--two {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            &__stats {
+                margin-top: $space-unit * 8;
+            }
+
+            &__stat-card {
+                padding: $space-unit * 4 $space-unit * 2;
+                flex: 1 1 calc((100% / 4) - 1.6rem);
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.galeria {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 2rem;
+        width: 100%;
+        box-sizing: border-box;
+
+        .galeria-container {
+            width: 100%;
+            max-width: 120rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .galeria-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .galeria-header h2 {
+            font-size: 3.6rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 0 1.5rem 0;
+            position: relative;
+            display: inline-block;
+        }
+        .galeria-header h2 > span{
+            color: #F4BA18;
+        }
+
+        .galeria-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6rem;
+            height: 0.3rem;
+            background-color: #F4BA18;
+        }
+
+        .galeria-header p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.514);
+            margin-top: 1.5rem;
+        }
+
+        /* Slider Principal */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 80rem;
+            height: 45rem;
+            margin-bottom: 2.4rem;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Gradiente do texto interno */
+        .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            padding: 3rem;
+            color: #ffffff;
+            pointer-events: none;
+        }
+
+        .slider-overlay h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        .slider-overlay p {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        /* Botões de Navegação (Setas) */
+        .slider-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: #1e293b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: background 0.2s, color 0.2s;
+            z-index: 5;
+        }
+
+        .slider-nav-btn:hover {
+            background: #f35b25;
+            color: #ffffff;
+        }
+
+        .slider-nav-btn.prev {
+            left: 2rem;
+        }
+
+        .slider-nav-btn.next {
+            right: 2rem;
+        }
+
+        /* Indicadores de bolinha (Dots) */
+        .slider-dots {
+            position: absolute;
+            bottom: 3.5rem;
+            right: 3rem;
+            display: flex;
+            gap: 0.8rem;
+            z-index: 5;
+        }
+
+        .slider-dots .galeria-dot {
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: 0.5;
+            transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .slider-dots .galeria-dot.ativo {
+            opacity: 1;
+            transform: scale(1.2);
+            background: #f35b25;
+        }
+
+        /* Miniaturas (Thumbnails) */
+        .thumb-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            width: 100%;
+            max-width: 80rem;
+            overflow-x: auto;
+            padding: 0.5rem 0 1.5rem 0;
+            justify-content: center;
+        }
+
+        .thumb-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .thumb-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .thumb-item {
+            flex: 1 1 calc((100% / 2) - 1.6rem);
+            width: 11rem;
+            height: 7.5rem;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .thumb-item.ativo {
+            border-color: #f35b25;
+        }
+
+    
+    }
