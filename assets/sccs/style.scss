@@ -21,6 +21,15 @@ $space-unit: 0.8rem;
 $container-max-width: 120rem;
 //about
 
+
+//equipe
+$color-primary: #f0a500;
+$color-primary-dark: #d99400;
+$color-bg-card: #171a24;
+$color-border: rgba(255, 255, 255, 0.08);
+$color-text-gray: #9ca0b3;
+//equipe
+
 * {
     padding: 0;
     margin: 0;
@@ -39,7 +48,7 @@ body {
 }
 
 
-.largura-definida{
+.largura-definida {
     margin: 0 auto;
     max-width: 120rem;
 }
@@ -596,6 +605,7 @@ main {
             gap: $space-unit;
             transition: transform .25s ease, border-color .25s ease;
             flex: 1 1 calc((100% / 2) - 1.6rem);
+
             &:hover {
                 transform: translateY(-4px);
                 border-color: rgba($color-accent, .4);
@@ -631,6 +641,356 @@ main {
         }
     }
 
+    .galeria {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        background: linear-gradient(to top, #0a0e1c, black);
+
+        .galeria-container {
+            width: 100%;
+            max-width: 120rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .galeria-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .galeria-header h2 {
+            font-size: 3.6rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 0 1.5rem 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .galeria-header h2>span {
+            color: #F4BA18;
+        }
+
+        .galeria-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6rem;
+            height: 0.3rem;
+            background-color: #F4BA18;
+        }
+
+        .galeria-header p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.514);
+            margin-top: 1.5rem;
+        }
+
+        /* Slider Principal */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 80rem;
+            height: 45rem;
+            margin-bottom: 2.4rem;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Gradiente do texto interno */
+        .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            padding: 3rem;
+            color: #ffffff;
+            pointer-events: none;
+        }
+
+        .slider-overlay h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        .slider-overlay p {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        /* Botões de Navegação (Setas) */
+        .slider-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: #1e293b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: background 0.2s, color 0.2s;
+            z-index: 5;
+        }
+
+        .slider-nav-btn:hover {
+            background: #f35b25;
+            color: #ffffff;
+        }
+
+        .slider-nav-btn.prev {
+            left: 2rem;
+        }
+
+        .slider-nav-btn.next {
+            right: 2rem;
+        }
+
+        /* Indicadores de bolinha (Dots) */
+        .slider-dots {
+            position: absolute;
+            bottom: 3.5rem;
+            right: 3rem;
+            display: flex;
+            gap: 0.8rem;
+            z-index: 5;
+        }
+
+        .slider-dots .galeria-dot {
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: 0.5;
+            transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .slider-dots .galeria-dot.ativo {
+            opacity: 1;
+            transform: scale(1.2);
+            background: #f35b25;
+        }
+
+        /* Miniaturas (Thumbnails) */
+        .thumb-container {
+            display: flex;
+            gap: 1.6rem;
+            width: 100%;
+            max-width: 80rem;
+            overflow-x: auto;
+            padding: 0.5rem 0 1.5rem 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumb-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .thumb-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .thumb-item {
+            flex: 1 1 calc((100% / 3) - 1.6rem);
+            width: 11rem;
+            height: 7.5rem;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .thumb-item.ativo {
+            border-color: #f35b25;
+        }
+
+
+    }
+
+    .equipe {
+        padding: 6rem 2rem;
+
+        background: linear-gradient(to top, black, #0a0e1c);
+
+        .equipe__cabecalho {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .equipe__titulo {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.6rem;
+
+            span {
+                color: $color-primary;
+            }
+        }
+
+        .equipe__subtitulo {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: $color-text-gray;
+        }
+
+        .equipe__grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .card-barbeiro {
+            background: $color-bg-card;
+            border: 1px solid $color-border;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+
+            &__imagem {
+                position: relative;
+                width: 100%;
+                height: 26rem;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.4s ease;
+                }
+            }
+
+            &:hover &__imagem img {
+                transform: scale(1.06);
+            }
+
+            &__nota {
+                position: absolute;
+                top: 1.4rem;
+                right: 1.4rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                background: $color-primary;
+                color: #16181f;
+                font-weight: 700;
+                font-size: 1.2rem;
+                padding: 0.5rem 1rem;
+                border-radius: 999px;
+
+                svg {
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+            }
+
+            &__conteudo {
+                padding: 2.4rem;
+            }
+
+            &__nome {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+            &__especialidade,
+            &__experiencia {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                font-size: 1.4rem;
+                margin-bottom: 0.8rem;
+
+                svg {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    flex-shrink: 0;
+                }
+            }
+
+            &__especialidade {
+                color: $color-primary;
+                font-weight: 600;
+            }
+
+            &__experiencia {
+                color: $color-text-gray;
+            }
+
+            &__descricao {
+                font-size: 1.4rem;
+                color: $color-text-gray;
+                margin: 1.2rem 0 2rem;
+                line-height: 1.5;
+            }
+        }
+
+        .botao--primario {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: $color-primary;
+            color: #16181f;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 1.3rem;
+            border-radius: 0.8rem;
+            text-decoration: none;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: $color-primary-dark;
+            }
+        }
+    }
 
 }
 
@@ -705,9 +1065,35 @@ main {
         }
     }
 
-    .galeria{
-        .thumb-item{
-            flex: 1 1 calc((100% / 3) - 1.6rem); 
+    .galeria {
+        .thumb-item {
+            flex: 1 1 calc((100% / 3) - 1.6rem);
+        }
+
+        .thumb-container {
+            flex-wrap: nowrap !important;
+        }
+
+    }
+
+    .equipe {
+        .equipe__titulo {
+            font-size: 3.6rem;
+        }
+
+        .equipe__subtitulo {
+            font-size: 1.6rem;
+            max-width: 55rem;
+            margin: 0 auto;
+        }
+
+        .equipe__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.4rem;
+        }
+
+        .card-barbeiro__imagem {
+            height: 24rem;
         }
     }
 }
@@ -849,222 +1235,41 @@ main {
                 flex: 1 1 calc((100% / 4) - 1.6rem);
             }
         }
+
+        .galeria {
+            .thumb-container {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .equipe {
+            padding: 10rem 2rem;
+
+            .equipe__cabecalho {
+                margin-bottom: 6rem;
+            }
+
+            .equipe__titulo {
+                font-size: 4.4rem;
+            }
+
+            .equipe__subtitulo {
+                font-size: 1.8rem;
+            }
+
+            .equipe__grid {
+                gap: 4rem;
+                max-width: 90rem;
+                margin: 0 auto;
+            }
+
+            .card-barbeiro__imagem {
+                height: 30rem;
+            }
+
+            .card-barbeiro__conteudo {
+                padding: 3rem;
+            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-.galeria {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 6rem 2rem;
-        width: 100%;
-        box-sizing: border-box;
-
-        .galeria-container {
-            width: 100%;
-            max-width: 120rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .galeria-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .galeria-header h2 {
-            font-size: 3.6rem;
-            font-weight: 700;
-            color: white;
-            margin: 0 0 1.5rem 0;
-            position: relative;
-            display: inline-block;
-        }
-        .galeria-header h2 > span{
-            color: #F4BA18;
-        }
-
-        .galeria-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -0.8rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6rem;
-            height: 0.3rem;
-            background-color: #F4BA18;
-        }
-
-        .galeria-header p {
-            font-size: 1.6rem;
-            color: rgba(255, 255, 255, 0.514);
-            margin-top: 1.5rem;
-        }
-
-        /* Slider Principal */
-        .slider-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 80rem;
-            height: 45rem;
-            margin-bottom: 2.4rem;
-            border-radius: 1.6rem;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .slider-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Gradiente do texto interno */
-        .slider-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-            padding: 3rem;
-            color: #ffffff;
-            pointer-events: none;
-        }
-
-        .slider-overlay h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 2.4rem;
-            font-weight: 700;
-        }
-
-        .slider-overlay p {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #cbd5e1;
-        }
-
-        /* Botões de Navegação (Setas) */
-        .slider-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4.5rem;
-            height: 4.5rem;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            color: #1e293b;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: background 0.2s, color 0.2s;
-            z-index: 5;
-        }
-
-        .slider-nav-btn:hover {
-            background: #f35b25;
-            color: #ffffff;
-        }
-
-        .slider-nav-btn.prev {
-            left: 2rem;
-        }
-
-        .slider-nav-btn.next {
-            right: 2rem;
-        }
-
-        /* Indicadores de bolinha (Dots) */
-        .slider-dots {
-            position: absolute;
-            bottom: 3.5rem;
-            right: 3rem;
-            display: flex;
-            gap: 0.8rem;
-            z-index: 5;
-        }
-
-        .slider-dots .galeria-dot {
-            width: 0.8rem;
-            height: 0.8rem;
-            border-radius: 50%;
-            background: #ffffff;
-            opacity: 0.5;
-            transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
-            cursor: pointer;
-        }
-
-        .slider-dots .galeria-dot.ativo {
-            opacity: 1;
-            transform: scale(1.2);
-            background: #f35b25;
-        }
-
-        /* Miniaturas (Thumbnails) */
-        .thumb-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.6rem;
-            width: 100%;
-            max-width: 80rem;
-            overflow-x: auto;
-            padding: 0.5rem 0 1.5rem 0;
-            justify-content: center;
-        }
-
-        .thumb-container::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .thumb-container::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        .thumb-item {
-            flex: 1 1 calc((100% / 2) - 1.6rem);
-            width: 11rem;
-            height: 7.5rem;
-            border-radius: 0.8rem;
-            overflow: hidden;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.2s, transform 0.2s;
-        }
-
-        .thumb-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .thumb-item:hover {
-            transform: translateY(-2px);
-        }
-
-        .thumb-item.ativo {
-            border-color: #f35b25;
-        }
-
-    
-    }

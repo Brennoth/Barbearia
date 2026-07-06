@@ -325,11 +325,11 @@
             </div>
         </section>
 
-        <section class="largura-definida galeria">
+        <section class="galeria">
 
 
 
-            <div class="galeria-container">
+            <div class="largura-definida  galeria-container">
 
                 <div class="galeria-header">
                     <h2>Nossa <span>Galeria</span></h2>
@@ -337,8 +337,7 @@
                         obra de arte única.</p>
                 </div>
 
-                <div class="slider-wrapper">
-                    <img id="galeriaPrincipal" src="" alt="">
+                <div class="slider-wrapper"> <img id="galeriaPrincipal" src="assets/img/images.jpg" alt="">
 
                     <div class="slider-overlay">
                         <h3 id="galeriaTitulo"></h3>
@@ -360,27 +359,146 @@
 
                 <div class="thumb-container" id="thumbContainer">
                     <div class="thumb-item ativo" data-index="0">
-                        <img src="" alt="">
+                        <img src="assets/img/images.jpg" alt="">
                     </div>
                     <div class="thumb-item" data-index="1">
-                        <img src="" alt="">
+                        <img src="assets/img/pexels-photo-1805600.avif" alt="">
                     </div>
                     <div class="thumb-item" data-index="2">
-                        <img src="" alt="">
+                        <img src="assets/img/pexels-photo-1813272.avif" alt="">
                     </div>
                     <div class="thumb-item" data-index="3">
-                        <img src="" alt="">
+                        <img src="assets/img/pexels-photo-1570807.avif" alt="">
                     </div>
                     <div class="thumb-item" data-index="4">
-                        <img src="" alt="">
+                        <img src="assets/img/pexels-photo-1813272.avif" alt="">
                     </div>
                     <div class="thumb-item" data-index="5">
-                        <img src="" alt="">
+                        <img src="assets/img/pexels-photo-1570807.avif" alt="">
                     </div>
                 </div>
 
             </div>
         </section>
+
+        <section class="equipe" id="equipe">
+            <div class="largura-definida equipe__container">
+
+                <!-- CABEÇALHO DA SEÇÃO: título + texto de apoio -->
+                <div class="equipe__cabecalho">
+                    <h2 class="equipe__titulo">Nossa <span>Equipe</span></h2>
+                    <p class="equipe__subtitulo">
+                        Conheça os mestres barbeiros que fazem da Elite Barbershop um lugar
+                        especial. Cada um com sua especialidade e anos de experiência.
+                    </p>
+                </div>
+
+                <!-- GRID COM OS CARDS DOS BARBEIROS -->
+                <div class="equipe__grid">
+
+                    <!-- ===== CARD 1: CARLOS SILVA ===== -->
+                    <article class="card-barbeiro">
+
+                        <div class="card-barbeiro__imagem">
+                            <img src="assets/img/images.jpg"
+                                alt="Carlos Silva, barbeiro master, cortando o cabelo de um cliente" loading="lazy" />
+
+                            <!-- Selo de avaliação (nota) que fica em cima da foto -->
+                            <span class="card-barbeiro__nota">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 7.1L12 17.8l-6.2 3.5L7 14.2 2 9.3l7.1-.7L12 2z" />
+                                </svg>
+                                4.9
+                            </span>
+                        </div>
+
+                        <div class="card-barbeiro__conteudo">
+                            <h3 class="card-barbeiro__nome">Carlos Silva</h3>
+
+                            <p class="card-barbeiro__especialidade">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="8" r="4" />
+                                    <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
+                                </svg>
+                                Barbeiro Master
+                            </p>
+
+                            <p class="card-barbeiro__experiencia">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 7v5l3 3" />
+                                </svg>
+                                12 anos de experiência
+                            </p>
+
+                            <p class="card-barbeiro__descricao">
+                                Cortes clássicos e modernos
+                            </p>
+
+                            <a href="#agendar" class="botao botao--primario">
+                                Agendar com Carlos
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ===== CARD 2: ROBERTO SANTOS ===== -->
+                    <article class="card-barbeiro">
+
+                        <div class="card-barbeiro__imagem">
+                            <img src="assets/img/pexels-photo-1570807.avif"
+                                alt="Roberto Santos, especialista em barba, finalizando o atendimento de um cliente"
+                                loading="lazy" />
+
+                            <span class="card-barbeiro__nota">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 7.1L12 17.8l-6.2 3.5L7 14.2 2 9.3l7.1-.7L12 2z" />
+                                </svg>
+                                4.8
+                            </span>
+                        </div>
+
+                        <div class="card-barbeiro__conteudo">
+                            <h3 class="card-barbeiro__nome">Roberto Santos</h3>
+
+                            <p class="card-barbeiro__especialidade">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="8" r="4" />
+                                    <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
+                                </svg>
+                                Especialista em Barba
+                            </p>
+
+                            <p class="card-barbeiro__experiencia">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 7v5l3 3" />
+                                </svg>
+                                8 anos de experiência
+                            </p>
+
+                            <p class="card-barbeiro__descricao">
+                                Barbas e bigodes
+                            </p>
+
+                            <a href="#agendar" class="botao botao--primario">
+                                Agendar com Roberto
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+                <!-- fim .equipe__grid -->
+
+            </div>
+            <!-- fim .largura-definida -->
+        </section>
+
 
     </main>
 

@@ -2,34 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const itensGaleria = [
         {
-            img: "",
-            titulo: "Nosso Chef",
-            descricao: "Mestre pizzaiolo com 20 anos de experiência"
+            img: "../../assets/img/images.jpg",
+            titulo: "",
+            descricao: ""
         },
         {
-            img: "",
-            titulo: "Margherita",
-            descricao: "Molho de tomate fresco, mussarela premium e manjericão"
+            img: "../../assets/img/pexels-photo-1570807.avif",
+            titulo: "",
+            descricao: ""
         },
         {
-            img: "",
-            titulo: "Pepperoni ",
-            descricao: "O clássico queridinho com muito sabor e picância na medida"
+            img: "../../assets/img/pexels-photo-1813272.avif",
+            titulo: " ",
+            descricao: ""
         },
         {
-            img: "",
-            titulo: "Quattro Formaggi",
-            descricao: "Uma combinação perfeita de quatro queijos especiais"
+            img: "../../assets/img/pexels-photo-1570807.avif",
+            titulo: " ",
+            descricao: " "
         },
         {
-            img: "",
-            titulo: "Vegetariana",
-            descricao: "Pimentões, cogumelos, azeitonas, cebola e tomate frescos"
+            img: "../../assets/img/pexels-photo-1813272.avif",
+            titulo: "",
+            descricao: " "
         },
         {
-            img: "",
-            titulo: "Calabresa",
-            descricao: "Calabresa defumada com cebola fresca e orégano"
+            img: "../../assets/img/pexels-photo-1570807.avif",
+            titulo: "",
+            descricao: " "
         }
     ];
 
