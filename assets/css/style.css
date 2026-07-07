@@ -106,20 +106,22 @@ header #menu .change #bar3 {
   transform: translateY(-6px) rotateZ(45deg);
 }
 header .menu-bg {
+  top: 0;
+  right: 0;
+  left: auto;
+  position: absolute;
   z-index: 1;
   width: 0;
   height: 0;
-  position: fixed;
-  top: 3.5rem;
-  left: calc(100% - 40px);
+  margin: 3rem 2rem 2rem 0;
   background: radial-gradient(circle, #ffb433);
   border-radius: 50%;
   transition: 0.3s ease;
 }
 header .change-bg {
-  width: 50rem;
-  height: 50rem;
-  transform: translate(-35%, -35%);
+  width: 52rem;
+  height: 46rem;
+  transform: translate(65%, -25%);
 }
 header .brand-logo {
   position: absolute;
@@ -130,7 +132,7 @@ header .brand-logo {
   gap: 0.8rem;
 }
 header .brand-logo .logo-icon {
-  background-color: #E6A11A;
+  background-color: #f0a92e;
   color: #0A0A0A;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
@@ -140,7 +142,7 @@ header .brand-logo .logo-icon {
 header .brand-logo .logo-text {
   font-size: 1.6em;
   font-weight: 700;
-  color: #E6A11A;
+  color: #f0a92e;
   letter-spacing: 0.5px;
 }
 
@@ -174,7 +176,7 @@ main .hero .hero-title span {
 }
 main .hero .hero-subtitle {
   font-size: 1.4rem;
-  color: #CCCCCC;
+  color: #7a869e;
   margin: 20px auto;
   line-height: 1.6;
   max-width: 40rem;
@@ -198,7 +200,7 @@ main .hero .hero-buttons a {
   letter-spacing: 0.5px;
 }
 main .hero .hero-buttons .btn-primary {
-  background-color: #E6A11A;
+  background-color: #f0a92e;
   color: #0A0A0A;
   font-weight: 700;
   transition: all 0.2s ease-in-out;
@@ -207,8 +209,8 @@ main .hero .hero-buttons .btn-primary:hover {
   transform: scale(1.1);
 }
 main .hero .hero-buttons .btn-secondary {
-  border: 2px solid #E6A11A;
-  color: #E6A11A;
+  border: 2px solid #f0a92e;
+  color: #f0a92e;
   transition: all 0.2s ease-in-out;
 }
 main .hero .hero-buttons .btn-secondary:hover {
@@ -222,7 +224,7 @@ main .hero .hero-cards {
   width: 100%;
 }
 main .hero .hero-cards .card {
-  background: rgba(22, 22, 22, 0.75);
+  background: #151f36;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.04);
   padding: 2rem;
@@ -232,7 +234,7 @@ main .hero .hero-cards .card {
 }
 main .hero .hero-cards .card .card-icon {
   font-size: 2.2rem;
-  color: #E6A11A;
+  color: #f0a92e;
   display: block;
   margin-bottom: 6px;
 }
@@ -243,7 +245,7 @@ main .hero .hero-cards .card h3 {
 }
 main .hero .hero-cards .card p {
   font-size: 1.2rem;
-  color: #CCCCCC;
+  color: #7a869e;
 }
 main .services {
   padding: 6rem 2rem;
@@ -265,11 +267,11 @@ main .services-header h2 {
   letter-spacing: -0.05rem;
 }
 main .services-header h2 span {
-  color: #E6A11A;
+  color: #f0a92e;
 }
 main .services-header p {
   font-size: 1.5rem;
-  color: #CCCCCC;
+  color: #7a869e;
   max-width: 60rem;
   margin: 0 auto;
   line-height: 1.6;
@@ -291,7 +293,7 @@ main .services .service-card {
 }
 main .services .service-card:hover {
   transform: translateY(-0.5rem);
-  border-color: rgba(230, 161, 26, 0.4);
+  border-color: rgba(240, 169, 46, 0.4);
   box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.4);
 }
 main .services .service-card .service-icon {
@@ -317,7 +319,7 @@ main .services .service-card .service-title {
 }
 main .services .service-card .service-desc {
   font-size: 1.45rem;
-  color: #CCCCCC;
+  color: #7a869e;
   line-height: 1.6;
   margin-bottom: 2.4rem;
   flex-grow: 1;
@@ -332,7 +334,7 @@ main .services .service-card .service-footer {
 main .services .service-card .service-price {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #E6A11A;
+  color: #f0a92e;
 }
 main .services .service-card .service-btn {
   display: block;
@@ -340,8 +342,8 @@ main .services .service-card .service-btn {
   text-align: center;
   padding: 1.4rem;
   background-color: transparent;
-  color: #E6A11A;
-  border: 0.1rem solid #E6A11A;
+  color: #f0a92e;
+  border: 0.1rem solid #f0a92e;
   border-radius: 0.8rem;
   font-size: 1.35rem;
   font-weight: 600;
@@ -351,11 +353,11 @@ main .services .service-card .service-btn {
   transition: all 0.3s ease;
 }
 main .services .service-card .service-btn:hover {
-  background-color: #E6A11A;
+  background-color: #f0a92e;
   color: #0A0A0A;
 }
 main .about {
-  background-color: #0a0e1c;
+  background-color: #0c1322;
   color: #f5f6fa;
   padding-block: 6.4rem;
   overflow: hidden;
@@ -469,7 +471,7 @@ main .about__stats {
 }
 main .about__stat-card {
   background-color: #171a24;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #2a3554;
   border-radius: 16px;
   padding: 2.4rem 1.6rem;
   display: flex;
@@ -725,7 +727,7 @@ main .equipe .equipe__grid {
 }
 main .equipe .card-barbeiro {
   background: #171a24;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #2a3554;
   border-radius: 1.6rem;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -890,6 +892,24 @@ main .equipe .botao--primario:hover {
   .equipe .card-barbeiro__imagem {
     height: 24rem;
   }
+  .contact {
+    padding: 6rem 4rem;
+  }
+  .contact .contact__title {
+    font-size: 3.4rem;
+  }
+  .contact .form__row {
+    flex-direction: row;
+  }
+  .contact .form__row .form__group {
+    flex: 1;
+  }
+  .contact .contact__info {
+    gap: 1.6rem;
+  }
+  .contact .info-card--map {
+    grid-column: 1/-1;
+  }
 }
 @media (min-width: 1024px) {
   header {
@@ -928,7 +948,7 @@ main .equipe .botao--primario:hover {
   }
   header #menu .nav li a:hover {
     display: inline-block;
-    color: #E6A11A;
+    color: #f0a92e;
     transform: scale(1.1);
   }
   header .menu-bg {
@@ -1014,5 +1034,25 @@ main .equipe .botao--primario:hover {
   }
   main .equipe .card-barbeiro__conteudo {
     padding: 3rem;
+  }
+  main .contact .contact__content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 6rem;
+  }
+  main .contact .contact__info {
+    grid-template-columns: 1fr;
+    flex: 1;
+    min-width: 0;
+  }
+  main .contact .info-card--map {
+    grid-column: auto;
+  }
+  main .contact .contact__form-wrapper {
+    flex: 1;
+    padding: 4rem;
+  }
+  main .contact .contact__title {
+    font-size: 4rem;
   }
 }/*# sourceMappingURL=style.css.map */

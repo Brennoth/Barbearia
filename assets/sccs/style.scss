@@ -21,7 +21,6 @@ $space-unit: 0.8rem;
 $container-max-width: 120rem;
 //about
 
-
 //equipe
 $color-primary: #f0a500;
 $color-primary-dark: #d99400;
@@ -29,6 +28,34 @@ $color-bg-card: #171a24;
 $color-border: rgba(255, 255, 255, 0.08);
 $color-text-gray: #9ca0b3;
 //equipe
+
+//contatos
+$color-bg: #0c1322;
+$color-card-bg: #151f36;
+$color-input-bg: #1b2740;
+$color-border: #2a3554;
+$color-gold: #f0a92e;
+$color-gold-dark: #d99420;
+$color-white: #ffffff;
+$color-text-soft: #a6b0c3;
+$color-text-muted: #7a869e;
+
+$font-heading: 'Poppins', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+$spacing-xs: 0.8rem;
+$spacing-sm: 1.6rem;
+$spacing-md: 2.4rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+$radius-sm: 0.8rem;
+$radius-md: 1.2rem;
+
+$transition-fast: 0.25s ease;
+
+//contatos
+
 
 * {
     padding: 0;
@@ -160,21 +187,23 @@ header {
 
     // A sua bolha/fundo expansível vermelho original
     .menu-bg {
+        top: 0;
+        right: 0;
+        left: auto;
+        position: absolute;
         z-index: 1;
         width: 0;
         height: 0;
-        position: fixed;
-        top: 3.5rem; // Atualizado para expandir a partir do centro do seu novo menu-bar
-        left: calc(100% - 40px); // Expande a partir do canto superior direito
+        margin: 3rem 2rem 2rem 0;
         background: radial-gradient(circle, #ffb433);
         border-radius: 50%;
         transition: 0.3s ease;
     }
 
     .change-bg {
-        width: 50rem; // Aumentado para garantir cobertura total da tela vindo do canto
-        height: 50rem;
-        transform: translate(-35%, -35%);
+        width: 52rem;
+        height: 46rem;
+        transform: translate(65%, -25%);
     }
 
     // ESTILO DA LOGO ADICIONADA À ESQUERDA DA BARRA (IGUAL AO DESIGN DA IMAGEM)
@@ -1096,6 +1125,30 @@ main {
             height: 24rem;
         }
     }
+
+    .contact {
+        padding: $spacing-xl $spacing-lg;
+
+        .contact__title {
+            font-size: 3.4rem;
+        }
+
+        .form__row {
+            flex-direction: row; // campos lado a lado
+
+            .form__group {
+                flex: 1;
+            }
+        }
+
+        .contact__info {
+            gap: $spacing-sm;
+        }
+
+        .info-card--map {
+            grid-column: 1 / -1; // ocupa as 2 colunas
+        }
+    }
 }
 
 //desktop
@@ -1271,5 +1324,37 @@ main {
                 padding: 3rem;
             }
         }
+
+        .contact {
+            .contact__content {
+                flex-direction: row; // info e form lado a lado
+                align-items: flex-start;
+                gap: $spacing-xl;
+            }
+
+            .contact__info {
+                grid-template-columns: 1fr; // volta pra 1 coluna
+                flex: 1;
+                min-width: 0;
+            }
+
+            .info-card--map {
+                grid-column: auto;
+            }
+
+            .contact__form-wrapper {
+                flex: 1;
+                padding: $spacing-lg;
+            }
+
+            .contact__title {
+                font-size: 4rem;
+            }
+
+        }
     }
 }
+
+
+
+

@@ -500,6 +500,176 @@
         </section>
 
 
+
+        <section class="contact" id="contato">
+            <div class="contact__container">
+
+                <!-- Cabeçalho da section -->
+                <div class="contact__header">
+                    <h2 class="contact__title">
+                        Entre em <span class="contact__title--highlight">Contato</span>
+                    </h2>
+                    <p class="contact__subtitle">
+                        Agende seu horário ou tire suas dúvidas. Estamos aqui para
+                        proporcionar a melhor experiência em cuidados masculinos.
+                    </p>
+                </div>
+
+                <!-- Conteúdo principal: grid com Informações + Formulário -->
+                <div class="contact__content">
+
+                    <!-- ================= BLOCO 1: INFORMAÇÕES ================= -->
+                    <div class="contact__info">
+                        <h3 class="contact__block-title">Informações de Contato</h3>
+
+                        <!-- Card: Endereço -->
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <div class="info-card__text">
+                                <h4>Endereço</h4>
+                                <p>Rua das Flores, 123 - Centro</p>
+                                <span>São Paulo, SP - 01234-567</span>
+                            </div>
+                        </div>
+
+                        <!-- Card: Telefone -->
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="info-card__text">
+                                <h4>Telefone</h4>
+                                <p>(11) 99999-9999</p>
+                                <span>WhatsApp disponível</span>
+                            </div>
+                        </div>
+
+                        <!-- Card: Horário -->
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                                    <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="info-card__text">
+                                <h4>Horário</h4>
+                                <p>Segunda a Sábado</p>
+                                <span>9h às 20h</span>
+                            </div>
+                        </div>
+
+                        <!-- Card: Email -->
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <path d="M2 7l10 6 10-6" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="info-card__text">
+                                <h4>Email</h4>
+                                <p>contato@elitebarbershop.com</p>
+                                <span>Resposta em até 24h</span>
+                            </div>
+                        </div>
+
+                        <!-- Card: Localização (mapa) -->
+                        <div class="info-card info-card--map">
+                            <div class="info-card__map-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Mapa Interativo</h4>
+                            <span>Centro da cidade</span>
+                        </div>
+                    </div>
+
+                    <!-- ================= BLOCO 2: FORMULÁRIO ================= -->
+                    <div class="contact__form-wrapper">
+                        <h3 class="contact__block-title">Envie uma Mensagem</h3>
+
+                        <!-- 
+          IMPORTANTE (boa prática de mercado):
+          - Todo <input> tem um <label> associado via "for" + "id".
+            Isso é essencial para ACESSIBILIDADE (leitores de tela)
+            e também aumenta a área clicável do campo.
+          - Usamos "novalidate" aqui de propósito porque este é só
+            o HTML/CSS estático. Quando você conectar com JS/back-end,
+            pode remover e usar a validação nativa do HTML5 (required,
+            type="email", etc.) ou validar via JavaScript.
+        -->
+                        <form class="contact__form" novalidate>
+
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+                                </div>
+                                <div class="form__group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="seu@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+                                </div>
+                                <div class="form__group">
+                                    <label for="servico">Serviço</label>
+                                    <select id="servico" name="servico">
+                                        <option value="" selected disabled>Selecione um serviço</option>
+                                        <option value="corte">Corte de Cabelo</option>
+                                        <option value="barba">Barba</option>
+                                        <option value="combo">Corte + Barba</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form__group form__group--full">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="5"
+                                    placeholder="Conte-nos mais sobre o que você precisa..."></textarea>
+                            </div>
+
+                            <button type="submit" class="form__submit">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <script src="assets/js/hamburguerMneu.js"></script>
