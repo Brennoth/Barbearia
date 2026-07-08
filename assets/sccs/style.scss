@@ -53,9 +53,26 @@ $radius-sm: 0.8rem;
 $radius-md: 1.2rem;
 
 $transition-fast: 0.25s ease;
-
 //contatos
 
+//footer
+$color-bg: #0a0f1c; // footer um pouco mais escuro que a section (dá profundidade)
+$color-border: #1f2940;
+$color-gold: #f0a92e;
+$color-white: #ffffff;
+$color-text-soft: #a6b0c3;
+$color-text-muted: #7a869e;
+
+$font-heading: 'Poppins', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+$spacing-sm: 1.6rem;
+$spacing-md: 2.4rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+$transition-fast: 0.25s ease;
+//footer
 
 * {
     padding: 0;
@@ -1021,6 +1038,436 @@ main {
         }
     }
 
+
+    .contact {
+        background-color: $color-bg;
+        color: $color-white;
+        font-family: $font-body;
+        padding: $spacing-xl $spacing-sm;
+
+        &__container {
+            max-width: 120rem; // 1200px — trava a largura em telas gigantes
+            margin: 0 auto;
+        }
+
+        &__header {
+            text-align: center;
+            margin-bottom: $spacing-lg;
+        }
+
+        &__title {
+            font-family: $font-heading;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: $spacing-sm;
+
+            &--highlight {
+                color: $color-gold;
+            }
+        }
+
+        &__subtitle {
+            color: $color-text-soft;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+
+        &__block-title {
+            font-family: $font-heading;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: $spacing-md;
+        }
+
+        // Mobile: tudo empilhado em 1 coluna
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-lg;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-sm;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: $spacing-sm;
+            background-color: $color-card-bg;
+            border: 1px solid $color-border;
+            border-radius: $radius-md;
+            padding: $spacing-sm;
+            transition: border-color $transition-fast, transform $transition-fast;
+
+            &:hover {
+                border-color: $color-gold;
+                transform: translateY(-2px);
+            }
+
+            &__icon {
+                flex-shrink: 0;
+                width: 4.4rem;
+                height: 4.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba($color-gold, 0.12);
+                border-radius: $radius-sm;
+                color: $color-gold;
+
+                svg {
+                    width: 2.2rem;
+                    height: 2.2rem;
+                }
+            }
+
+            &__text {
+                h4 {
+                    font-family: $font-heading;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    margin-bottom: 0.4rem;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    color: $color-white;
+                    margin-bottom: 0.2rem;
+                }
+
+                span {
+                    font-size: 1.3rem;
+                    color: $color-text-muted;
+                }
+            }
+
+            &--map {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                min-height: 16rem;
+                color: $color-text-soft;
+
+                h4 {
+                    font-family: $font-heading;
+                    font-size: 1.5rem;
+                    margin: $spacing-xs 0 0.4rem;
+                }
+
+                span {
+                    font-size: 1.3rem;
+                    color: $color-text-muted;
+                }
+            }
+        }
+
+        .info-card__map-icon {
+            width: 4.4rem;
+            height: 4.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-gold;
+
+            svg {
+                width: 2.8rem;
+                height: 2.8rem;
+            }
+        }
+
+        // =============================================================
+        // FORMULÁRIO
+        // =============================================================
+        .contact__form-wrapper {
+            background-color: $color-card-bg;
+            border: 1px solid $color-border;
+            border-radius: $radius-md;
+            padding: $spacing-md;
+        }
+
+        .form {
+            &__row {
+                display: flex;
+                flex-direction: column; // mobile: 1 campo embaixo do outro
+                gap: $spacing-sm;
+                margin-bottom: $spacing-sm;
+            }
+
+            &__group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+
+                label {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    color: $color-text-soft;
+                }
+
+                input,
+                select,
+                textarea {
+                    width: 100%;
+                    background-color: $color-input-bg;
+                    border: 1px solid $color-border;
+                    border-radius: $radius-sm;
+                    padding: 1.2rem 1.4rem;
+                    color: $color-white;
+                    font-family: $font-body;
+                    font-size: 1.4rem;
+
+                    &::placeholder {
+                        color: $color-text-muted;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border-color: $color-gold;
+                        box-shadow: 0 0 0 3px rgba($color-gold, 0.15);
+                    }
+                }
+
+                select {
+                    cursor: pointer;
+                }
+
+                textarea {
+                    resize: vertical;
+                    min-height: 12rem;
+                }
+
+                &--full {
+                    margin-bottom: $spacing-md;
+                }
+            }
+
+            &__submit {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.8rem;
+                width: 100%;
+                background-color: $color-gold;
+                color: $color-bg;
+                border: none;
+                border-radius: $radius-sm;
+                padding: 1.4rem;
+                font-family: $font-heading;
+                font-size: 1.5rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color $transition-fast, transform $transition-fast;
+
+                svg {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+
+                &:hover {
+                    background-color: $color-gold-dark;
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+
+
+    }
+
+}
+
+.footer {
+    background-color: $color-bg;
+    color: $color-text-soft;
+    font-family: $font-body;
+    border-top: 1px solid $color-border;
+    padding: $spacing-xl $spacing-sm $spacing-md;
+
+    &__container {
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+
+    // No mobile, tudo empilhado em 1 coluna
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+        margin-bottom: $spacing-lg;
+    }
+
+    .footer__brand {
+        .footer__logo {
+            display: flex;
+            align-items: center;
+            gap: $spacing-sm;
+            font-family: $font-heading;
+            font-size: 2rem;
+            font-weight: 700;
+            color: $color-white;
+            margin-bottom: $spacing-sm;
+        }
+
+        .footer__logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.6rem;
+            height: 3.6rem;
+            background-color: $color-gold;
+            color: $color-bg; // ícone escuro sobre fundo dourado
+            border-radius: 0.8rem;
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        .footer__description {
+            font-size: 1.4rem;
+            line-height: 1.7; // texto longo precisa de mais espaço entre linhas pra respirar
+            margin-bottom: $spacing-md;
+            max-width: 34rem;
+        }
+    }
+
+    // Ícones de rede social
+    .footer__social {
+        display: flex;
+        gap: $spacing-sm;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%; // círculo perfeito
+            background-color: rgba($color-white, 0.06);
+            color: $color-white;
+            transition: background-color $transition-fast, color $transition-fast, transform $transition-fast;
+
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+
+            // Boa prática: SEMPRE dar feedback visual no hover em algo
+            // clicável. Se não muda nada, o usuário não sabe que é
+            // interativo.
+            &:hover {
+                background-color: $color-gold;
+                color: $color-bg;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    // ---------- Colunas de links (Links Rápidos / Serviços) ----------
+    .footer__col-title {
+        font-family: $font-heading;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $color-white;
+        margin-bottom: $spacing-sm;
+    }
+
+    .footer__list {
+        list-style: none; // tira a bolinha padrão de <ul>
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        a {
+            color: $color-text-soft;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: color $transition-fast, padding-left $transition-fast;
+
+            &:hover {
+                color: $color-gold;
+                padding-left: 0.4rem; // um leve "empurrão" pra direita no hover
+            }
+        }
+
+        // Modificador BEM: item de serviço em destaque (Combo Premium)
+        &-highlight {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 0.8rem;
+            color: $color-gold !important;
+            font-weight: 500;
+        }
+    }
+
+    .footer__dot {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: $color-gold;
+        flex-shrink: 0;
+    }
+
+    // ---------- Coluna de contato ----------
+    .footer__contact-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            font-size: 1.4rem;
+            line-height: 1.5;
+
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+                flex-shrink: 0;
+                margin-top: 0.2rem;
+                color: $color-gold;
+            }
+        }
+    }
+
+    // ---------- Linha de baixo (copyright) ----------
+    .footer__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-sm;
+        text-align: center;
+        padding-top: $spacing-md;
+        border-top: 1px solid $color-border;
+        font-size: 1.3rem;
+        color: $color-text-muted;
+
+        &-links {
+            display: flex;
+            gap: $spacing-md;
+
+            a {
+                color: $color-text-muted;
+                text-decoration: none;
+                transition: color $transition-fast;
+
+                &:hover {
+                    color: $color-gold;
+                }
+            }
+        }
+    }
 }
 
 //tablet
@@ -1147,6 +1594,30 @@ main {
 
         .info-card--map {
             grid-column: 1 / -1; // ocupa as 2 colunas
+        }
+    }
+
+
+    .footer {
+        padding: $spacing-xl $spacing-lg $spacing-md;
+
+        // 2 colunas: marca ocupa a linha toda em cima, e as outras
+        // 3 colunas de conteúdo se organizam em grid de 2 embaixo
+        .footer__top {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: $spacing-lg $spacing-md;
+        }
+
+        .footer__brand {
+            grid-column: 1 / -1; // ocupa as 2 colunas no topo
+        }
+
+        // Linha de baixo: copyright na esquerda, links na direita
+        .footer__bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
         }
     }
 }
@@ -1353,8 +1824,15 @@ main {
 
         }
     }
+
+    footer {
+        .footer__top {
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: $spacing-lg;
+        }
+
+        .footer__brand {
+            grid-column: auto; // desfaz o "ocupa tudo" do tablet
+        }
+    }
 }
-
-
-
-

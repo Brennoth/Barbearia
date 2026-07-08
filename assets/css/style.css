@@ -357,7 +357,7 @@ main .services .service-card .service-btn:hover {
   color: #0A0A0A;
 }
 main .about {
-  background-color: #0c1322;
+  background-color: #0a0f1c;
   color: #f5f6fa;
   padding-block: 6.4rem;
   overflow: hidden;
@@ -471,7 +471,7 @@ main .about__stats {
 }
 main .about__stat-card {
   background-color: #171a24;
-  border: 1px solid #2a3554;
+  border: 1px solid #1f2940;
   border-radius: 16px;
   padding: 2.4rem 1.6rem;
   display: flex;
@@ -727,7 +727,7 @@ main .equipe .equipe__grid {
 }
 main .equipe .card-barbeiro {
   background: #171a24;
-  border: 1px solid #2a3554;
+  border: 1px solid #1f2940;
   border-radius: 1.6rem;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -819,6 +819,360 @@ main .equipe .botao--primario {
 main .equipe .botao--primario:hover {
   background: #d99400;
 }
+main .contact {
+  background-color: #0a0f1c;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  padding: 6rem 1.6rem;
+}
+main .contact__container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+main .contact__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+main .contact__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+main .contact__title--highlight {
+  color: #f0a92e;
+}
+main .contact__subtitle {
+  color: #a6b0c3;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+main .contact__block-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+main .contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+main .contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+main .contact .info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  background-color: #151f36;
+  border: 1px solid #1f2940;
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+main .contact .info-card:hover {
+  border-color: #f0a92e;
+  transform: translateY(-2px);
+}
+main .contact .info-card__icon {
+  flex-shrink: 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(240, 169, 46, 0.12);
+  border-radius: 0.8rem;
+  color: #f0a92e;
+}
+main .contact .info-card__icon svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+main .contact .info-card__text h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+main .contact .info-card__text p {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+main .contact .info-card__text span {
+  font-size: 1.3rem;
+  color: #7a869e;
+}
+main .contact .info-card--map {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-height: 16rem;
+  color: #a6b0c3;
+}
+main .contact .info-card--map h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  margin: 0.8rem 0 0.4rem;
+}
+main .contact .info-card--map span {
+  font-size: 1.3rem;
+  color: #7a869e;
+}
+main .contact .info-card__map-icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0a92e;
+}
+main .contact .info-card__map-icon svg {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+main .contact .contact__form-wrapper {
+  background-color: #151f36;
+  border: 1px solid #1f2940;
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+}
+main .contact .form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+main .contact .form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+main .contact .form__group label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #a6b0c3;
+}
+main .contact .form__group input,
+main .contact .form__group select,
+main .contact .form__group textarea {
+  width: 100%;
+  background-color: #1b2740;
+  border: 1px solid #1f2940;
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.4rem;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+}
+main .contact .form__group input::placeholder,
+main .contact .form__group select::placeholder,
+main .contact .form__group textarea::placeholder {
+  color: #7a869e;
+}
+main .contact .form__group input:focus,
+main .contact .form__group select:focus,
+main .contact .form__group textarea:focus {
+  outline: none;
+  border-color: #f0a92e;
+  box-shadow: 0 0 0 3px rgba(240, 169, 46, 0.15);
+}
+main .contact .form__group select {
+  cursor: pointer;
+}
+main .contact .form__group textarea {
+  resize: vertical;
+  min-height: 12rem;
+}
+main .contact .form__group--full {
+  margin-bottom: 2.4rem;
+}
+main .contact .form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  background-color: #f0a92e;
+  color: #0a0f1c;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+main .contact .form__submit svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+main .contact .form__submit:hover {
+  background-color: #d99420;
+}
+main .contact .form__submit:active {
+  transform: scale(0.98);
+}
+
+.footer {
+  background-color: #0a0f1c;
+  color: #a6b0c3;
+  font-family: "Inter", sans-serif;
+  border-top: 1px solid #1f2940;
+  padding: 6rem 1.6rem 2.4rem;
+}
+.footer__container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.footer .footer__brand .footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.6rem;
+}
+.footer .footer__brand .footer__logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: #f0a92e;
+  color: #0a0f1c;
+  border-radius: 0.8rem;
+}
+.footer .footer__brand .footer__logo-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+.footer .footer__brand .footer__description {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 2.4rem;
+  max-width: 34rem;
+}
+.footer .footer__social {
+  display: flex;
+  gap: 1.6rem;
+}
+.footer .footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.footer .footer__social-link svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.footer .footer__social-link:hover {
+  background-color: #f0a92e;
+  color: #0a0f1c;
+  transform: translateY(-3px);
+}
+.footer .footer__col-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.6rem;
+}
+.footer .footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.footer .footer__list a {
+  color: #a6b0c3;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+.footer .footer__list a:hover {
+  color: #f0a92e;
+  padding-left: 0.4rem;
+}
+.footer .footer__list-highlight {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.8rem;
+  color: #f0a92e !important;
+  font-weight: 500;
+}
+.footer .footer__dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #f0a92e;
+  flex-shrink: 0;
+}
+.footer .footer__contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.footer .footer__contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.footer .footer__contact-list li svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: #f0a92e;
+}
+.footer .footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+  padding-top: 2.4rem;
+  border-top: 1px solid #1f2940;
+  font-size: 1.3rem;
+  color: #7a869e;
+}
+.footer .footer__bottom-links {
+  display: flex;
+  gap: 2.4rem;
+}
+.footer .footer__bottom-links a {
+  color: #7a869e;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.footer .footer__bottom-links a:hover {
+  color: #f0a92e;
+}
 
 @media (min-width: 768px) {
   .hero {
@@ -909,6 +1263,22 @@ main .equipe .botao--primario:hover {
   }
   .contact .info-card--map {
     grid-column: 1/-1;
+  }
+  .footer {
+    padding: 6rem 4rem 2.4rem;
+  }
+  .footer .footer__top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2.4rem;
+  }
+  .footer .footer__brand {
+    grid-column: 1/-1;
+  }
+  .footer .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 }
 @media (min-width: 1024px) {
@@ -1054,5 +1424,12 @@ main .equipe .botao--primario:hover {
   }
   main .contact .contact__title {
     font-size: 4rem;
+  }
+  footer .footer__top {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+  footer .footer__brand {
+    grid-column: auto;
   }
 }/*# sourceMappingURL=style.css.map */
